@@ -1,18 +1,23 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
+from project.utils.data import get_developer
 
 devs = Blueprint('home', __name__)
-LISTA_DEV = []
+DEV_LIST = []
 
 @devs.route('/', methods=['GET'])
 def home():
-    return LISTA_DEV
+    return DEV_LIST
 
 @devs.route('/<string:developer>', methods=['GET', 'POST'])
 def dev_name(developer):
     if request.method == 'GET':
-        return developer
+        
+        get_dev_name = get_developer(developer, DEV_LIST)
+
+        return jsonify(get_dev_name)
     
     elif request.method == 'POST':
+        DEV_LIST.append(developer) # teste
         return 'ocorrera um armazenamento aqui'
     
     return 'Método inválido'
