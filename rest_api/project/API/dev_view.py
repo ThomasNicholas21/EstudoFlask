@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from project.utils.data import get_developer
+from project.utils.data import get_developer, post_developer_name
 
 devs = Blueprint('home', __name__)
 DEV_LIST = []
@@ -17,8 +17,10 @@ def dev_name(developer):
         return jsonify(get_dev_name)
     
     elif request.method == 'POST':
-        DEV_LIST.append(developer) # teste
-        return 'ocorrera um armazenamento aqui'
+        
+        post_developer_name(developer, DEV_LIST)
+
+        return 'processamento'
     
     return 'Método inválido'
 
