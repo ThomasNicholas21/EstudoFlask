@@ -19,3 +19,6 @@ def post_developer_name(data_developer, list_developer):
 
 def get_devoloper_tecnologie():
     ...
+
+def post_developer_tecnologie():
+    ...
