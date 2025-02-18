@@ -16,3 +16,6 @@ def post_developer_name(data_developer, list_developer):
     list_developer.append(default_dict)
     
     return list_developer
+
+def get_devoloper_tecnologie():
+    ...
