@@ -16,3 +16,8 @@ def dev_name(developer):
         return 'ocorrera um armazenamento aqui'
     
     return 'Método inválido'
+
+@devs.route('/<string:developer>/<string:tecnologies>')
+def dev_tecnologies(developer, tecnologies):
+    return 'ocorrera alguma coisa aqui'
+
