@@ -1,1 +1,1 @@
-from project.API.dev_view import *
+from project.api.dev_view import *
