@@ -24,7 +24,13 @@ def dev_name(developer):
     
     return 'Método inválido'
 
-@devs.route('/<string:developer>/<string:tecnologies>')
+@devs.route('/<string:developer>/<string:tecnologies>', methods=['GET', 'POST'])
 def dev_tecnologies(developer, tecnologies):
-    return 'ocorrera alguma coisa aqui'
+    if request.method == 'GET':
+        return 'GET'
+    
+    elif request.method == 'POST':
+        return 'POST'
+    
+    return 'Método inválido'
 
