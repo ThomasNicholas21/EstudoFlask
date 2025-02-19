@@ -8,7 +8,7 @@ def get_developer(data_developer: dict, list_developer: list[dict]):
     return None
 
 
-def post_developer_name(data_developer, list_developer):
+def post_developer_name(data_developer: dict, list_developer: list[dict]):
     default_dict = {'name': data_developer}
     list_developer.append(default_dict)
 
