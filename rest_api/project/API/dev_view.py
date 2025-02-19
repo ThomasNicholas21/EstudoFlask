@@ -10,8 +10,11 @@ DEV_LIST = []
 def home():
     return DEV_LIST
 
+
 @devs.route('/dev/<int:id>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def dev_name(id):
+    developer_name = json.loads(request.data)
+
     if request.method == 'GET':
         
         get_dev_name = get_developer(id, DEV_LIST)
@@ -20,7 +23,7 @@ def dev_name(id):
     
     elif request.method == 'POST':
         
-        post_developer_name(id, DEV_LIST)
+        post_developer_name(developer_name, DEV_LIST)
 
         return jsonify(get_dev_name)
 
@@ -31,6 +34,7 @@ def dev_name(id):
         ...
     
     return 'Invalid Method'
+
 
 @devs.route('/<string:developer>/tecnologies', methods=['POST'])
 def dev_tecnologies(developer):
