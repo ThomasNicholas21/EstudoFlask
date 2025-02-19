@@ -35,7 +35,7 @@ def get_dev_name(id):
     return 'Invalid Method'
 
 
-@devs.route('/dev/<int:id>', methods=['PUT'])
+@devs.route('/dev/<int:id>/update', methods=['PUT'])
 def get_dev_name(id):
     if request.method == 'GET':
         
