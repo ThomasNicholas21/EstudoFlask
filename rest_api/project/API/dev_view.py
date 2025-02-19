@@ -11,27 +11,14 @@ def home():
     return DEV_LIST
 
 
-@devs.route('/dev/<int:id>', methods=['GET', 'POST', 'PUT', 'DELETE'])
-def dev_name(id):
-    developer_name = json.loads(request.data)
-
+@devs.route('/dev/<int:id>', methods=['GET'])
+def get_dev_name(id):
     if request.method == 'GET':
         
         get_dev_name = get_developer(id, DEV_LIST)
 
         return jsonify(get_dev_name)
     
-    elif request.method == 'POST':
-        
-        post_developer_name(developer_name, DEV_LIST)
 
-        return jsonify(get_dev_name)
-
-    elif request.method == 'PUT':
-        ...
-    
-    elif request.method == 'DELETE':
-        ...
-    
     return 'Invalid Method'
 
