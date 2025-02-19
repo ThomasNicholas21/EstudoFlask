@@ -22,7 +22,7 @@ def dev_name(developer):
         
         post_developer_name(developer, DEV_LIST)
 
-        return 'processamento'
+        return jsonify(get_dev_name)
     
     return 'Invalid Method'
 
