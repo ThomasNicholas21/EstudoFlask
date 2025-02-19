@@ -1,6 +1,6 @@
 # aqui icorrerá processamento de dados vindo da request do tipo "POST"
 
-def get_developer(data_developer, list_developer):
+def get_developer(data_developer: dict, list_developer: list[dict]):
     for devs in list_developer:
         if devs['name'] == data_developer:
             return devs
