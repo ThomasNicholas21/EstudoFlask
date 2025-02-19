@@ -11,15 +11,11 @@ def get_developer(data_developer, list_developer):
 def post_developer_name(data_developer, list_developer):
     default_dict = {'name': data_developer}
     list_developer.append(default_dict)
-    
 
-def get_devoloper_tecnologie():
-    ...
 
 def post_developer_tecnologie(data_developer, data_tecnologie, list_developer):
     get_developer_info = get_developer(data_developer, list_developer)
     if get_developer_info:
         get_developer_info.update(data_tecnologie)
         
-
 
