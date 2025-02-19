@@ -47,7 +47,7 @@ def get_dev_name(id):
     return 'Invalid Method'
 
 
-@devs.route('/dev/<int:id>', methods=['DELETE'])
+@devs.route('/dev/<int:id>/delete', methods=['DELETE'])
 def get_dev_name(id):
     if request.method == 'GET':
         
