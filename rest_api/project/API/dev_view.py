@@ -3,7 +3,7 @@ from project.utils.data import get_developer, post_developer_name
 from project.utils.data import post_developer_tecnologie
 import json
 
-devs = Blueprint('home', __name__)
+devs: Blueprint = Blueprint('home', __name__)
 DEV_LIST = []
 
 @devs.route('/', methods=['GET'])
