@@ -26,18 +26,15 @@ def dev_name(developer):
     
     return 'Invalid Method'
 
-@devs.route('/<string:developer>/tecnologies', methods=['GET', 'POST'])
+@devs.route('/<string:developer>/tecnologies', methods=['POST'])
 def dev_tecnologies(developer):
     tecnologies = json.loads(request.data)
-
-    if request.method == 'GET':
-        return 'GET'
     
-    elif request.method == 'POST':
+    if request.method == 'POST':
 
         post_developer_tecnologie(developer, tecnologies, DEV_LIST)
 
-        return 'processamento'
+        return jsonify(tecnologies)
     
     return 'Invalid Method'
 
