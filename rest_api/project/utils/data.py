@@ -18,4 +18,3 @@ def post_developer_tecnologie(data_developer: dict, data_tecnologie: dict, list_
     if get_developer_info:
         get_developer_info.update(data_tecnologie)
         
-
