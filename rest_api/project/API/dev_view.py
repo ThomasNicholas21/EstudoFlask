@@ -10,17 +10,17 @@ DEV_LIST = []
 def home():
     return DEV_LIST
 
-@devs.route('/<string:developer>', methods=['GET', 'POST', 'PUT', 'DELETE'])
-def dev_name(developer):
+@devs.route('/dev/<int:id>', methods=['GET', 'POST', 'PUT', 'DELETE'])
+def dev_name(id):
     if request.method == 'GET':
         
-        get_dev_name = get_developer(developer, DEV_LIST)
+        get_dev_name = get_developer(id, DEV_LIST)
 
         return jsonify(get_dev_name)
     
     elif request.method == 'POST':
         
-        post_developer_name(developer, DEV_LIST)
+        post_developer_name(id, DEV_LIST)
 
         return jsonify(get_dev_name)
 
