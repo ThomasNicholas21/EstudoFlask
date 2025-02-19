@@ -22,3 +22,15 @@ def get_dev_name(id):
 
     return 'Invalid Method'
 
+
+@devs.route('/dev/post', methods=['POST'])
+def get_dev_name(id):
+    if request.method == 'GET':
+        
+        get_dev_name = get_developer(id, DEV_LIST)
+
+        return jsonify(get_dev_name)
+    
+
+    return 'Invalid Method'
+
