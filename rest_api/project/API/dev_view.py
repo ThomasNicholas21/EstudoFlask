@@ -14,7 +14,7 @@ def home():
 
 
 @devs.route('/dev/<int:id>', methods=['GET'])
-def get_dev_name(id):
+def get_dev_name(id: int):
     if request.method == 'GET':
         get_dev_name = get_developer(id, DEV_LIST)
 
@@ -36,7 +36,7 @@ def post_dev_name():
 
 
 @devs.route('/dev/<int:id>/update', methods=['PUT'])
-def update_dev_name(id):
+def update_dev_name(id: int):
     developer = json.loads(request.data)
 
     if request.method == 'PUT':
@@ -48,7 +48,7 @@ def update_dev_name(id):
 
 
 @devs.route('/dev/<int:id>/delete', methods=['DELETE'])
-def delete_dev_name(id):
+def delete_dev_name(id: int):
     if request.method == 'DELETE':
         delete_developer(id, DEV_LIST)
 
