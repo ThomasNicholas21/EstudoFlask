@@ -3,9 +3,12 @@
 def get_developer(developer_id: int, list_developer: list[dict]):
     try:
         developer = list_developer[developer_id]
-        return developer
+
     except IndexError:
-        raise IndexError(f'Error: list has none value: {developer} ')
+        message = "ID is invalid, does not exist".format(developer_id)
+        developer = {"status": "Erro", "Message": message}
+
+    return developer
 
 
 def post_developer_name(data_developer: dict, list_developer: list[dict]):
