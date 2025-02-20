@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from project.utils.data import get_developer, post_developer_name
-from project.utils.data import update_developer_name
+from project.utils.data import update_developer_name, delete_developer
 import json
 
 devs: Blueprint = Blueprint('home', __name__)
@@ -53,11 +53,11 @@ def update_dev_name(id):
 
 @devs.route('/dev/<int:id>/delete', methods=['DELETE'])
 def delete_dev_name(id):
-    if request.method == 'GET':
+    if request.method == 'DELETE':
         
-        get_dev_name = get_developer(id, DEV_LIST)
+        delete_developer(id, DEV_LIST)
 
-        return jsonify(get_dev_name)
+        return 'Developer Deleted'
     
 
     return 'Invalid Method'
