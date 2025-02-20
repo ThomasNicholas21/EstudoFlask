@@ -24,7 +24,7 @@ def get_dev_name(id):
 
 
 @devs.route('/dev/post', methods=['POST'])
-def get_dev_name(id):
+def post_dev_name(id):
     if request.method == 'GET':
         
         get_dev_name = get_developer(id, DEV_LIST)
@@ -36,7 +36,7 @@ def get_dev_name(id):
 
 
 @devs.route('/dev/<int:id>/update', methods=['PUT'])
-def get_dev_name(id):
+def update_dev_name(id):
     if request.method == 'GET':
         
         get_dev_name = get_developer(id, DEV_LIST)
@@ -48,7 +48,7 @@ def get_dev_name(id):
 
 
 @devs.route('/dev/<int:id>/delete', methods=['DELETE'])
-def get_dev_name(id):
+def delete_dev_name(id):
     if request.method == 'GET':
         
         get_dev_name = get_developer(id, DEV_LIST)
