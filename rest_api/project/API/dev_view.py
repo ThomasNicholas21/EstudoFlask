@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from project.utils.data import get_developer, post_developer_name
-from project.utils.data import post_developer_tecnologie
+from project.utils.data import update_developer_name
 import json
 
 devs: Blueprint = Blueprint('home', __name__)
@@ -43,7 +43,7 @@ def update_dev_name(id):
 
     if request.method == 'PUT':
         
-        post_developer_name(developer, DEV_LIST)
+        update_developer_name(developer, id, DEV_LIST)
 
         return 'User updated'
     
