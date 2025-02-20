@@ -9,8 +9,7 @@ def get_developer(developer_id: int, list_developer: list[dict]):
 
 
 def post_developer_name(data_developer: dict, list_developer: list[dict]):
-    default_dict = {'name': data_developer}
-    list_developer.append(default_dict)
+    list_developer.append(data_developer)
 
 
 
