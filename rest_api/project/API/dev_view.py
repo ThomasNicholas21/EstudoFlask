@@ -24,12 +24,14 @@ def get_dev_name(id):
 
 
 @devs.route('/dev/post', methods=['POST'])
-def post_dev_name(id):
-    if request.method == 'GET':
-        
-        get_dev_name = get_developer(id, DEV_LIST)
+def post_dev_name():
+    developer = json.loads(request.data)
 
-        return jsonify(get_dev_name)
+    if request.method == 'POST':
+        
+        post_developer_name(developer, DEV_LIST)
+
+        return 'Developer Created'
     
 
     return 'Invalid Method'
