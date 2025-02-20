@@ -39,11 +39,13 @@ def post_dev_name():
 
 @devs.route('/dev/<int:id>/update', methods=['PUT'])
 def update_dev_name(id):
-    if request.method == 'GET':
-        
-        get_dev_name = get_developer(id, DEV_LIST)
+    developer = json.loads(request.data)
 
-        return jsonify(get_dev_name)
+    if request.method == 'PUT':
+        
+        post_developer_name(developer, DEV_LIST)
+
+        return 'User updated'
     
 
     return 'Invalid Method'
